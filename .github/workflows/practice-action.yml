@@ -1,0 +1,22 @@
+name: My Practice Action
+
+# The 'on' keyword defines what triggers this action to run.
+on: [push] 
+
+jobs:
+  practice-job:
+    # This tells GitHub what operating system to run your task on.
+    runs-on: ubuntu-latest 
+    
+    steps:
+      # Step 1: This is a pre-built action that pulls your repository code into the virtual machine.
+      - name: Checkout Code
+        uses: actions/checkout@v4 
+
+      # Step 2: This runs a simple shell command.
+      - name: Run a greeting command
+        run: echo "Hello, GitHub Actions! I am successfully running my practiceworkflow."
+        
+      # Step 3: Another shell command to list the files in the directory.
+      - name: List files
+        run: ls -la
